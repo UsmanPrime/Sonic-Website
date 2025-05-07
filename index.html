@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sonic Speed Solutions</title>
+    <link rel="icon" type="image/x-icon" href="assets/flash.ico">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        .sonic-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .btn-gold {
+            background-color: #FFD700;
+            color: #0f2032;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #e6c200;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        .sonic-ring {
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* @keyframes appear {
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        } */
+
+    </style>
+</head>
+<body class="bg-white text-[#0f2032]">
+    <header class="grid grid-cols-1 md:grid-cols-2 p-5 bg-[#0f2032] text-white sticky top-0 z-50 shadow-lg">
+        <div class="flex justify-center md:justify-start">
+            <img src="https://cdn.sega.co.uk/mhc-sega/public/content/media/images/vector/sega-logo.svg" alt="Sega Logo" class="h-12 hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="hidden md:block">
+            <ul class="flex justify-between items-center h-full">
+                <li><a href="#home" class="nav-link text-white hover:text-[#FFD700]">HOME</a></li>
+                <li><a href="#about" class="nav-link text-white hover:text-[#FFD700]">ABOUT</a></li>
+                <li><a href="#services" class="nav-link text-white hover:text-[#FFD700]">SERVICES</a></li>
+                <li><a href="#testimonials" class="nav-link text-white hover:text-[#FFD700]">TESTIMONIALS</a></li>
+                <li><a href="#contact" class="nav-link text-white hover:text-[#FFD700]">CONTACT</a></li>
+                <li><button class="btn-gold px-4 py-2 rounded-md font-bold">GET STARTED</button></li>
+            </ul>
+        </div>
+        <div class="md:hidden flex justify-end">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden col-span-2 mt-4">
+            <ul class="space-y-4 text-center">
+                <li><a href="#home" class="block nav-link text-white hover:text-[#FFD700]">HOME</a></li>
+                <li><a href="#about" class="block nav-link text-white hover:text-[#FFD700]">ABOUT</a></li>
+                <li><a href="#services" class="block nav-link text-white hover:text-[#FFD700]">SERVICES</a></li>
+                <li><a href="#testimonials" class="block nav-link text-white hover:text-[#FFD700]">TESTIMONIALS</a></li>
+                <li><a href="#contact" class="block nav-link text-white hover:text-[#FFD700]">CONTACT</a></li>
+                <li><button class="btn-gold px-4 py-2 rounded-md font-bold w-full">GET STARTED</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="relative h-[calc(100vh-64px)] bg-[url('https://files.cdn-files-a.com/uploads/10633811/2000_67ff07be83c9e.png')] bg-cover bg-center flex items-center justify-center" data-aos="fade">
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative z-10 text-center text-[#FFD700] px-4" data-aos="zoom-in" data-aos-delay="300">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 uppercase sonic-font">sonic speed solutions</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Delivering at the speed of sound since 2024</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#services" class="btn-gold px-6 py-3 rounded-md font-bold text-lg hover:shadow-lg">Our Services</a>
+                <a href="#contact" class="bg-transparent border-2 border-[#FFD700] text-[#FFD700] px-6 py-3 rounded-md font-bold text-lg hover:bg-[#FFD700] hover:text-[#0f2032] transition-all">Contact Us</a>
+            </div>
+        </div>
+        
+        <a href="#about" class="scroll-down text-[#FFD700] text-4xl">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="about" class="grid grid-cols-2 items-center">
+      <div class="p-8 md:p-20 order-2 md:order-1" data-aos="fade-right">
+        <h1 class="text-4xl uppercase my-5 font-bold text-[#0f2032] border-b-2 border-[#FFD700] pb-2 inline-block">About Us</h1>
+        <p class="text-lg leading-relaxed mt-6">
+            At Sonic Speed Solutions, we bring you lightning-fast delivery, thrilling adventure tours, and quick recovery of lost items—powered by the legendary speed and problem-solving skills of Sonic the Hedgehog. Whether you're sending a package, seeking excitement, or need help tracking something down, our services are built for speed, reliability, and fun. Get ready to move at the speed of Sonic!
+        </p>
+        <div class="mt-8 flex items-center">
+            <i class="fas fa-bolt text-3xl text-[#FFD700] mr-4 sonic-ring"></i>
+            <span class="text-lg font-semibold">Fastest services in the galaxy</span>
+        </div>
+    </div>
+    <div class="w-full md:w-auto h-96 overflow-hidden rounded-xl relative order-1 md:order-2" data-aos="fade-left">
+      <img 
+          src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/06/1455190466-sonic-the-hedgehog-1080x675.png" 
+          alt="Sonic Running" 
+          class="absolute w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+      >
+  </div>
+    </section>
+
+    <!-- <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-center place-items-center mt-20 py-20 bg-gradient-to-b from-white to-blue-50" data-aos="fade-up">
+        <div class="p-8 md:p-20 order-2 md:order-1">
+            <h1 class="text-4xl uppercase my-5 font-bold text-[#0f2032] border-b-2 border-[#FFD700] pb-2 inline-block">About Us</h1>
+            <p class="text-lg leading-relaxed mt-6">
+                At Sonic Speed Solutions, we bring you lightning-fast delivery, thrilling adventure tours, and quick recovery of lost items—powered by the legendary speed and problem-solving skills of Sonic the Hedgehog. Whether you're sending a package, seeking excitement, or need help tracking something down, our services are built for speed, reliability, and fun. Get ready to move at the speed of Sonic!
+            </p>
+            <div class="mt-8 flex items-center">
+                <i class="fas fa-bolt text-3xl text-[#FFD700] mr-4 sonic-ring"></i>
+                <span class="text-lg font-semibold">Fastest services in the galaxy</span>
+            </div>
+        </div>
+        <div class="w-full md:w-auto h-96 overflow-hidden rounded-xl relative order-1 md:order-2" data-aos="fade-left">
+            <img 
+                src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/06/1455190466-sonic-the-hedgehog-1080x675.png" 
+                alt="Sonic Running" 
+                class="absolute w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+            >
+        </div>
+    </section> -->
+
+    <section id="services" class="py-20 bg-[#0f2032] text-white" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h1 class="text-center text-3xl md:text-4xl font-bold mb-10 uppercase sonic-font">Our Services</h1>
+            <p class="text-center text-xl mb-16 max-w-3xl mx-auto">Experience the fastest services in the universe, delivered with Sonic's signature speed and style!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-white text-[#0f2032] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl" data-aos="flip-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://files.cdn-files-a.com/uploads/10633811/400_67ff10fcb0a58.jpg" 
+                            alt="Delivery Service" 
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shipping-fast text-3xl text-[#FFD700] mr-3"></i>
+                            <h2 class="text-xl font-bold">Lightning Delivery</h2>
+                        </div>
+                        <p class="text-gray-700 mb-4">Get your packages delivered faster than the speed of sound! Our delivery service guarantees your items will arrive before you even realize they're gone.</p>
+                        <button class="btn-gold px-4 py-2 rounded-md font-bold w-full hover:bg-[#e6c200]">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white text-[#0f2032] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl" data-aos="flip-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://files.cdn-files-a.com/uploads/10633811/400_67ff12d76c783.png" 
+                            alt="Adventure Tours" 
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-running text-3xl text-[#FFD700] mr-3"></i>
+                            <h2 class="text-xl font-bold">Sonic Adventures</h2>
+                        </div>
+                        <p class="text-gray-700 mb-10">Join Sonic on thrilling adventure tours through loop-de-loops and corkscrews! Experience the world at Sonic's speed with our guided tours.</p>
+                        <button class="btn-gold px-4 py-2 rounded-md font-bold w-full hover:bg-[#e6c200]">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white text-[#0f2032] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl" data-aos="flip-up" data-aos-delay="500">
+                    <div class="h-48 overflow-hidden">
+                        <img 
+                            src="https://files.cdn-files-a.com/uploads/10633811/400_67ff178bc9227.png" 
+                            alt="Recovery Service" 
+                            class="w-full h-full object-fill bg-white hover:scale-110 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-search text-3xl text-[#FFD700] mr-3"></i>
+                            <h2 class="text-xl font-bold">Ring Recovery</h2>
+                        </div>
+                        <p class="text-gray-700 mb-4">Lost something valuable? Our Ring Recovery service will find your lost items faster than Sonic collects gold rings! No chaos emerald is too hard to find.</p>
+                        <button class="btn-gold px-4 py-2 rounded-md font-bold w-full hover:bg-[#e6c200]">Find My Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-gradient-to-b from-blue-50 to-white" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h1 class="text-center text-3xl md:text-4xl font-bold mb-10 uppercase sonic-font">Testimonials</h1>
+            <p class="text-center text-xl mb-16 max-w-3xl mx-auto">Hear what our satisfied customers have to say about our speedy services!</p>
+            
+            <div class="relative w-full overflow-hidden" data-aos="zoom-in">
+              <!-- Carousel container -->
+              <div class="carousel-container relative w-full h-[400px] md:h-[300px]">
+                <!-- Slide 1 -->
+                <div id="slide1" class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out transform translate-x-0">
+                  <div class="flex flex-col md:flex-row items-center gap-8 p-6 bg-white rounded-xl shadow-lg mx-4 md:mx-40 h-full">
+                    <img src="https://files.cdn-files-a.com/uploads/10633811/400_67ff19231ad4e.png" class="w-50 object-cover rounded-full shadow-md border-4 border-[#FFD700]" alt="Tails" />
+                    <div>
+                      <div class="flex items-center mb-2 text-[#FFD700] text-xl">★★★★★</div>
+                      <p class="text-xl font-medium mb-4 italic">
+                        "Sonic's speed and reliability saved our stomach countless times. His food delivery service is unbeatable! I've never had cold chili dogs since using Sonic Speed Solutions."
+                      </p>
+                      <p class="font-bold text-[#0f2032]">Tails (Miles Prower): <span class="font-normal">Best friend and sidekick</span></p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div id="slide2" class="carousel-slide absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out transform translate-x-0">
+                    <div class="flex flex-col md:flex-row items-center gap-8 p-6 bg-white rounded-xl shadow-lg mx-4 md:mx-40 h-full">
+                      <img src="https://files.cdn-files-a.com/uploads/10633811/400_67ff1a0a6101f.png" class="w-50 object-cover rounded-full shadow-md border-4 border-[#FFD700]" alt="Tails" />
+                      <div>
+                        <div class="flex items-center mb-2 text-[#FFD700] text-xl">★★★★★</div>
+                        <p class="text-xl font-medium mb-4 italic">
+                          "Even I can’t keep up with Sonic’s energy! His adventure tours are the best for thrill-seekers."
+                        </p>
+                        <p class="font-bold text-[#0f2032]">Knuckles the Echidna: <span class="font-normal">Ally and occasional rival</span></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              
+              <!-- Navigation arrows -->
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-10">
+                <button onclick="prevSlide()" class="btn btn-circle bg-[#0f2032] text-[#FFD700] border-none hover:bg-[#FFD700] hover:text-[#0f2032] transition-all duration-300">❮</button>
+                <button onclick="nextSlide()" class="btn btn-circle bg-[#0f2032] text-[#FFD700] border-none hover:bg-[#FFD700] hover:text-[#0f2032] transition-all duration-300">❯</button>
+              </div>
+              
+              <!-- Indicators -->
+              <div class="flex justify-center mt-6 space-x-2">
+                <button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-[#0f2032] opacity-50 hover:opacity-100 transition-opacity duration-300 indicator-dot"></button>
+                <button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-[#0f2032] opacity-50 hover:opacity-100 transition-opacity duration-300 indicator-dot"></button>
+              </div>
+            </div>
+            
+            <style>
+              .carousel-slide {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+              }
+              
+              .carousel-slide.active {
+                opacity: 1;
+                transform: translateX(0);
+              }
+              
+              .carousel-slide.next {
+                transform: translateX(100%);
+              }
+              
+              .carousel-slide.prev {
+                transform: translateX(-100%);
+              }
+              
+              .indicator-dot.active {
+                opacity: 1;
+                width: 12px;
+                border-radius: 6px;
+                background-color: #FFD700;
+              }
+            </style>
+            
+            <script>
+              let currentSlide = 0;
+              const slides = document.querySelectorAll('.carousel-slide');
+              const dots = document.querySelectorAll('.indicator-dot');
+              
+              // Initialize carousel
+              function initCarousel() {
+                slides.forEach((slide, index) => {
+                  if (index === 0) {
+                    slide.classList.add('active');
+                  } else {
+                    slide.classList.add('next');
+                  }
+                });
+                updateIndicators();
+              }
+              
+              // Update slide positions
+              function updateSlides() {
+                slides.forEach((slide, index) => {
+                  slide.classList.remove('active', 'prev', 'next');
+                  
+                  if (index === currentSlide) {
+                    slide.classList.add('active');
+                  } else if (index === (currentSlide + 1) % slides.length) {
+                    slide.classList.add('next');
+                  } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+                    slide.classList.add('prev');
+                  }
+                });
+              }
+              
+              // Update indicator dots
+              function updateIndicators() {
+                dots.forEach((dot, index) => {
+                  dot.classList.toggle('active', index === currentSlide);
+                });
+              }
+              
+              // Go to specific slide
+              function goToSlide(index) {
+                currentSlide = index;
+                updateSlides();
+                updateIndicators();
+              }
+              
+              // Next slide
+              function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlides();
+                updateIndicators();
+              }
+              
+              // Previous slide
+              function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlides();
+                updateIndicators();
+              }
+              
+              // Auto-advance (optional)
+              // let slideInterval = setInterval(nextSlide, 5000);
+              
+              // Initialize on load
+              document.addEventListener('DOMContentLoaded', initCarousel);
+            </script>
+            
+
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-100 py-20" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl" data-aos="fade-right">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.787947789488!2d73.0829889744367!3d33.71088888069699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd951b11311%3A0x9590822901b2c11c!2sBlock%20C%20Sector%20C%20PWD%20Society%2C%20Islamabad%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1682178900000!5m2!1sen!2sus"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="hover:scale-105 transition-transform duration-500"
+                ></iframe>
+            </div>
+        
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between transform transition-all duration-300 hover:shadow-xl" data-aos="fade-left">
+                <div>
+                    <h2 class="text-2xl font-bold text-[#0f2032] mb-6 uppercase sonic-font">Contact Us</h2>
+                    <div class="mb-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-envelope text-[#FFD700] text-xl mr-3"></i>
+                            <h3 class="text-lg font-medium text-[#0f2032]">Email</h3>
+                        </div>
+                        <p class="text-gray-600 ml-8">sonicspeedsolutions@gmail.com</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-phone-alt text-[#FFD700] text-xl mr-3"></i>
+                            <h3 class="text-lg font-medium text-[#0f2032]">Contact Info</h3>
+                        </div>
+                        <p class="text-gray-600 ml-8">+92 300 5284092</p>
+                    </div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-[#FFD700] text-xl mr-3"></i>
+                            <h3 class="text-lg font-medium text-[#0f2032]">Address</h3>
+                        </div>
+                        <p class="text-gray-600 ml-8">PWD Block C Islamabad</p>
+                        <p class="text-gray-600 ml-8">24/7 Operation</p>
+                    </div>
+                </div>
+        
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-[#0f2032] mb-1">Name</label>
+                        <input type="text" id="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FFD700] focus:border-[#FFD700] sm:text-sm p-3 border">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-[#0f2032] mb-1">Email address</label>
+                        <input type="email" id="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FFD700] focus:border-[#FFD700] sm:text-sm p-3 border">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-[#0f2032] mb-1">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#FFD700] focus:border-[#FFD700] sm:text-sm p-3 border"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full py-3 px-4 bg-[#FFD700] text-[#0f2032] font-bold rounded-md shadow-md hover:bg-[#e6c200] focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 transition-all duration-300 uppercase sonic-font tracking-wide">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer sm:footer-horizontal bg-[#0f2032] text-white p-10">
+        <aside class="flex flex-col items-center md:items-start">
+            <div class="flex items-center mb-4">
+                <i class="fa-solid fa-bolt text-5xl text-[#FFD700] mr-3 sonic-ring"></i>
+                <span class="text-2xl font-bold sonic-font">SONIC</span>
+            </div>
+            <p>
+                SONIC Speed Solutions Ltd.
+                <br />
+                Delivering at the speed of sound since 1991
+            </p>
+        </aside>
+        <nav class="mt-6 md:mt-0">
+            <h6 class="footer-title text-white">Social</h6>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.instagram.com/soni_csolutions/" class="text-2xl text-white hover:text-[#FFD700] transition-colors duration-300">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:sonicspeedsolutions@gmail.com" class="text-2xl text-white hover:text-[#FFD700] transition-colors duration-300">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=szby7ZHLnkA&pp=ygUTc29uaWMgbW92aWUgdHJhaWxlcg%3D%3D" class="text-2xl text-white hover:text-[#FFD700] transition-colors duration-300">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="mt-4">
+                <p class="text-sm">© 2030 Sonic Speed Solutions. All rights reserved.</p>
+            </div>
+            
+        </nav>
+        
+        <p class="text-xl">Made by <b>Abdul Moiz <br>Usman Ibrahim <br>Alishba Inam <br>Tehrem Wasim </p>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+
+        // Service card hover effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.add('animate-pulse');
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('animate-pulse');
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thanks for your message! Sonic will get back to you at the speed of sound!');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
